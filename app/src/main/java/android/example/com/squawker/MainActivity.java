@@ -16,6 +16,7 @@
 
 package android.example.com.squawker;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.example.com.squawker.following.FollowingPreferenceActivity;
@@ -34,6 +35,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -85,6 +87,27 @@ public class MainActivity extends AppCompatActivity implements
 
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
+
+        // Insert dummy data/ doesn't work for now???
+        ContentValues values = new ContentValues();
+        values.put(SquawkContract.COLUMN_DATE, 1487968810557L);
+        values.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.LYLA_KEY);
+        values.put(SquawkContract.COLUMN_AUTHOR, "TheRealLyla");
+        values.put(SquawkContract.COLUMN_MESSAGE, "La La La");
+        getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, values);
+
+        ContentValues values2 = new ContentValues();
+        values2.put(SquawkContract.COLUMN_DATE, 1487968811043L);
+        values2.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.ASSER_KEY);
+        values2.put(SquawkContract.COLUMN_AUTHOR, "TheRealAsser");
+        values2.put(SquawkContract.COLUMN_MESSAGE, "La La La");
+        getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, values2);
+
+        int count = mAdapter.getItemCount();
+        Log.v(LOG_TAG, "Item count is: " + count);    // is 0
+
+
+
 
     }
 
