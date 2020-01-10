@@ -3,15 +3,20 @@
 buildscript {
     repositories {
         jcenter()
+        google()   // Google's Maven repository
     }
     dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.2'
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.2.1'
 
         // TODO (1) Make a new Firebase project in the Firebase Console and follow the instructions.
         // The console is here: https://console.firebase.google.com/
+        //
+        // https://firebase.google.com/docs/android/setup#use_the_firebase_assistant  instructions
+        // git diff https://github.com/udacity/AdvancedAndroid_Squawker/compare/TFCM.01-Exercise-AddGradleDependencies...TFCM.01-Solution-AddGradleDependencies
 
         // TODO (2) Add Google Services plugin here
+        // this is root-level (project-level) Gradle file (build.gradle)
+        classpath 'com.google.gms:google-services:4.3.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -22,6 +27,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()    // Google Services plugin
     }
 }
 
