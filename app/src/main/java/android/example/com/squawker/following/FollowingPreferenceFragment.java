@@ -28,7 +28,9 @@ import com.google.firebase.messaging.FirebaseMessaging;
 // https://github.com/udacity/AdvancedAndroid_Squawker/compare/TFCM.05-Exercise-ImplementInstructorTopicFollowing...TFCM.05-Solution-ImplementInstructorTopicFollowing
 //
 // https://squawkerfcmserver.udacity.com/
-// https://console.firebase.google.com/project/squawker-93569/settings/cloudmessaging/android:android.example.com.squawker 
+// https://console.firebase.google.com/project/squawker-93569/settings/cloudmessaging/android:android.example.com.squawker
+//
+// How to set up an FCM server like Squawker server is here: https://firebase.google.com/docs/cloud-messaging/server
 /**
  * Shows the list of instructors you can follow
  */
